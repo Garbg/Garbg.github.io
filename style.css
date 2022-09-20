@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root{
+    --loaderStart: 0deg;
+    --loaderEnd: 180deg;
+}
+
+@property --loaderStart {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+  
+@property --loaderEnd {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 180deg;
+}
 * {
     opacity:0;
 }
@@ -8,4 +24,60 @@
 body, html{
     background-color: rgb(20,20,20);
     opacity:1;
+}
+
+.loader{
+    opacity:1;
+    filter: drop-shadow(black 0px 10px 10px);
+    position:relative;
+    top: calc(50vh - 62.5px);
+    left: calc(50vw - 125px);
+    width: 250px;
+    height: 250px;
+    border-radius: 99999px;
+    background: conic-gradient(from -90deg, rgba(0,0,0,0) var(--loaderStart), #81FBB8 var(--loaderStart), #28C76F var(--loaderEnd), rgba(0,0,0,0) var(--loaderEnd));
+    animation: gradient 3s infinite ease;
+  }
+  
+  @keyframes gradient{
+      0% {
+          --loaderStart: 0deg;
+          --loaderEnd: 0deg;
+      }
+      33% {
+          --loaderStart: 0deg;
+          --loaderEnd: 180deg;
+      }
+  
+      66% {
+          --loaderStart: 180deg;
+          --loaderEnd: 180deg;
+      }
+      100% {
+          --loaderStart: 0deg;
+          --loaderEnd: 0deg;
+      }
+  }
+
+.fadeout {
+    animation: fadeout 1s ease;
+}
+
+.fadein {
+    animation: fadein 1s ease;
+    opacity:1;
+}
+
+.hidden{
+    opacity:0;
+    display:none;
+}
+@keyframes fadeout{
+    from {opacity:1; display:block;}
+    to {opacity:0; display:none}
+}
+
+@keyframes fadein{
+    from {opacity:0;}
+    to {opacity:1;}
 }
