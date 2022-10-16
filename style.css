@@ -26,6 +26,13 @@ body, html{
     opacity:1;
 }
 
+p{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2{
+    font-family: 'DM Sans', sans-serif;
+}
 .loader{
     opacity:1;
     filter: drop-shadow(black 0px 10px 10px);
@@ -61,6 +68,7 @@ body, html{
 
 .fadeout {
     animation: fadeout 1s ease;
+    transform-origin: 125px 62.5px;
 }
 
 .fadein {
@@ -72,12 +80,38 @@ body, html{
     opacity:0;
     display:none;
 }
+
+nav{
+    background-color: rgba(20, 20, 20, 1);
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    nav {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(20, 20, 20, 0);
+      width: 100vw;  
+    }
+}
 @keyframes fadeout{
-    from {opacity:1; display:block;}
-    to {opacity:0; display:none}
+    from {opacity:1; display:block; width: 250px; height: 250px; transform: scale(1,1);}
+    to {opacity:0; display:none; transform: scale(1.5,1.5);}
 }
 
 @keyframes fadein{
     from {opacity:0;}
     to {opacity:1;}
+}
+
+.page{
+    position:relative;
+    top:88px;
+    padding-top: 10px;
+}
+
+#cards-container{
+    display:grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, auto);
+    padding-bottom: 20px;
 }

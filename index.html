@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Garbg's website</title>
-    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="tailwind.css" />
     <script src="script.js"></script>
-</head>
-<body>
-    <nav class="shadow-xl p-2">
-        <img src="icon.png" class="w-20 rounded-full">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="shadow-xl p-2 flex flex-row items-center fixed">
+      <img src="icon.png" class="w-20 rounded-full" />
+      <h1
+        class="text-white text-3xl font-semibold ml-5"
+        style="font-family: 'DM Sans', sans-serif"
+      >
+        Garbg
+      </h1>
     </nav>
     <div class="loader"></div>
-</body>
+    <div class="page">
+      <h1
+        class="text-white text-4xl font-semibold ml-5 text-center"
+        style="font-family: 'DM Sans', sans-serif"
+      >
+        Bio!
+      </h1>
+      <p class="text-white text-center text-lg">
+        I like coding and video games and other stuffs.
+      </p>
+      <h1 class="text-white text-4xl font-semibold ml-5 text-center mt-4">
+        Projects
+      </h1>
+      <div
+        id="cards-container"
+        class="w-fit text-black dark:text-white ml-auto mr-auto relative top-5"
+      >
+        <a href="https://github.com/Garbg/waterfox-install">
+          <div class="card shadow-lg rounded-xl text-center hover:shadow-xl">
+            <img
+              class="rounded-t-xl"
+              width="400px"
+              src="images/waterfox.webp"
+            />
+            <h1 class="text-3xl pt-2.5 text-white">Waterfox installer</h1>
+            <h2 class="text-xl pb-2.5 text-white">A install script for waterfox on linux</h2>
+          </div>
+        </a>
+        <a href="https://github.com/Garbg/fake-cheat">
+          <div class="card shadow-lg rounded-xl text-center hover:shadow-xl">
+            <img
+              class="rounded-t-xl"
+              width="400px"
+              src="images/fakecheat.webp"
+            />
+            <h1 class="text-3xl pt-2.5 text-white">Fake cheat</h1>
+            <h2 class="text-xl pb-2.5 text-white">A fake minecraft ghost client</h2>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
